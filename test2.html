@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="mystyle.css" />
+<style type="text/css">
+#div1 {width:350px;height:70px;padding:10px;border:1px solid #aaaaaa;}
+</style>
+<script>
+
+</script>
+</head>
+<body>
+<nav class="menu">
+			<ul>
+				<li><a href="index.html">HOME</a></li>
+				<li>
+					<a href="teams.html">TEAMS</a>
+					<ul>
+						<li><a href="teams/lakers.html">Los Angeles Lakers</a></li>
+						<li><a href="teams/knicks.html">New York Knicks</a></li>
+						<li><a href="teams/nets.html">New Jersey Nets</a></li>
+					</ul></li>
+				<li><a href="players.html">PLAYERS</a></li>
+				<li><a href="suscribe.html">SUSCRIBE</a></li>
+				<li id="menuLast"><a href="hobbies.html">OTHER HOBBIES</a></li>
+			</ul>
+		</nav>
+
+<span class="middle">
+Here is a list of some of my favorite players. Drag the names to the container on the left to view more information about them.
+			</br>
+<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+</span>
+
+</body>
+</html>
