@@ -42,14 +42,16 @@ function checkEmail(e){
 	//if email not empty, check for @ sign
 	email=true;
 	clearElement("emailCheck");
-	if (email!=null){
+	if (e!=null){
 		if ((e.indexOf("@")==-1)||(e.length<=6)){
 			var node=document.createTextNode("Email is invalid. ");
 			document.getElementById("emailCheck").appendChild(node);
+			email=false;
 		}
 		if (document.getElementById("email").value != document.getElementById("confirmEmail").value){
 			var node=document.createTextNode("Emails do not match.");
 			document.getElementById("emailCheck").appendChild(node);
+			email=false;
 		}
 	}
 	else{
@@ -67,18 +69,22 @@ function checkGender(){
 }
 
 function pageCheck(){
-	if (pass&&email&&checkGender()){
+
+	if (pass&&email&&checkGender()&&last&&first&&username){
 		return true;
 	}
 	return false;
 }
 
 function test(){
-	document.getElementById("test").innerHTML="Password: "+pass+document.getElementById("passCheck").innerHTML+
+	
+	document.getElementById("test").innerHTML=
+	"Password: "+pass+document.getElementById("passCheck").innerHTML+
 	"<br />Email: "+ email+ document.getElementById("emailCheck").innerHTML+
-	"<br />Sex: "+ checkGender(+
-	"br />First: "+ firstName+
-	"br />Last: "+ lastName);
+	"<br />Sex: "+ checkGender()+
+	"<br />First: "+ firstName+
+	"<br />Last: "+ lastName+
+	"<br />Username: " + username + document.getElementById("userCheck").innerHTML;
 }
 
 function clearElement(elem){

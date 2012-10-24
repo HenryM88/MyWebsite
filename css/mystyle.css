@@ -1,6 +1,6 @@
 body {
 
-background-image:url("images/nashkobe.jpg");
+background-image:url("/images/nashkobe.jpg");
 background-repeat:no-repeat;
 background-attachment:fixed;
 }
@@ -39,11 +39,11 @@ display: block;border-top:1px solid white;padding:10px; position:relative;width:
 }
 
 .middle{
-position:fixed;
+position:absolute;
 top:160px;
 background-color:#EEE685;
 width:600px;
-height:1000px;
+
 z-index:-1;
 margin-left:300px;
 opacity:.85;
@@ -58,4 +58,12 @@ width:200px;
 .warning{
 color:red;
 }
+.green{
+color:green;
 }
+
+.fadeText{display:none; color:blue; font-size:20px}
+}
+div { }
+.first { display:none; background-color: #3f3; left: 0;}
+.second { display:none; background-color: #33f;}

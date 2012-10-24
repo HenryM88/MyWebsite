@@ -1,8 +1,51 @@
+<?php include 'databaseconnect.php';
+include 'header.php'; ?>
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<link rel="stylesheet" type="text/css" href="mystyle.css" />
+		<link rel="stylesheet" type="text/css" href="/css/mystyle.css" />
 		<script type="text/javascript" src="Suscribe.js"></script>
+		<script src="jquery.js"></script>
+		<script>
+		var username=false;
+		
+		function checkUsername(user)
+		{
+			if (user=="") //user.length<1
+			  {
+			  document.getElementById("userCheck").innerHTML="Username field must not be empty.";
+			  username=false;
+			  return;
+			  }
+			if (window.XMLHttpRequest)
+			  {// code for IE7+, Firefox, Chrome, Opera, Safari
+			  xmlhttp=new XMLHttpRequest();
+			  }
+			else
+			  {// code for IE6, IE5
+			  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+			  }
+			xmlhttp.onreadystatechange=function()
+			  {
+			  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+			    {
+			    document.getElementById("userCheck").innerHTML=xmlhttp.responseText;
+			    if (xmlhttp.responseText=="Username is valid."){
+			    	document.getElementById("userCheck").style.color="green";
+			    	}
+			    else{
+				    document.getElementById("userCheck").style.color="red";
+			    	}
+			    }
+			  }
+			xmlhttp.open("GET","checkUser.php?q="+user,true);
+			xmlhttp.send();
+			if(document.getElementById("userCheck").innerHTML==""){
+				username=true;
+			}
+		}
+
+		</script>
 	</head>
 	<body>
 		<?php include 'menu.php'?>
@@ -15,11 +58,13 @@
 			Sex must be selected. <br />
 			Email must have @ and must match. <br />
 			<br /> <br />
-			<form name="suscribe" action="success.php" onsubmit="return pageCheck()" method="POST">
+			<form name="suscribe" action="success.php" autocomplete="off" onsubmit="return pageCheck()" method="POST">
+				Username : <input type="text" name="username" id="username" onchange="checkUsername(this.value)">
+				<p id="userCheck"></p>
 				First name: <input type="text" name="firstName" id="firstName" onchange="checkFirstName(this.value)">
-				<span class="warning" id="checkFirst"></span><br />
+				<p class="warning" id="checkFirst"></p>
 				Last name: <input type="text" name="lastName" id="lastName" onchange="checkLastName(this.value)">
-				<span class="warning" id="checkLast"></span><br />
+				<p class="warning" id="checkLast"></p>
 				Password: <input id="pass" name="password" type="password" onchange="checkPass()"> 
 				Confirm Password: <input id="confirmPass" type="password" onchange="checkPass()"><br />
 				<p class="warning" id="passCheck"></p>

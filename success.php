@@ -1,27 +1,32 @@
-<?php include 'databaseconnect.php';
-mysql_query("INSERT INTO MEMBERS (FirstName, LastName, Password, Email, Sex) VALUES (
+<?php 
+session_start();
+$_SESSION['user']=$_POST['username'];
+include 'databaseconnect.php';
+$encryptedPassword=md5($_POST['password']);
+mysql_query("INSERT INTO members (Username, FirstName, LastName, Password, Email, Sex) VALUES (
+'$_POST[username]',
 '$_POST[firstName]',
 '$_POST[lastName]',
-'$_POST[password]',
+'$encryptedPassword',
 '$_POST[sex]',
 '$_POST[email]')");
 
-mysql_query("INSERT INTO Persons (FirstName, LastName, Age)
-VALUES ('Glenn', 'Quagmire',33)");
+
 ?>
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<link rel="stylesheet" type="text/css" href="mystyle.css" />
+		<link rel="stylesheet" type="text/css" href="/css/mystyle.css" />
 	</head>
 	<body>
 		<?php include 'menu.php'?>
 			<span class="middle">
-			<h1><?php echo "Congratulations, you are now a member ". $_POST["firstName"]?></h1>
+			<h1><?php echo "Congratulations, you are now a member ". $_POST["username"]?></h1>
 			<h3>Login function and forums coming soon.</h2>
 			<?php echo "First Name: " .$_POST["firstName"] . "<br />";
+			echo "Username: " .$_POST["username"] . "<br />";
 			echo "Last Name: " .$_POST["lastName"] . "<br />";
-			echo "Password: " .$_POST["password"] . "<br />";
+			echo "Encrypted Password: " .$encryptedPassword . "<br />";
 			echo "Sex: " .$_POST["sex"] . "<br />";
 			echo "Email: " .$_POST["email"] . "<br />";
 			?>

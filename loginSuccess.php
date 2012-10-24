@@ -2,7 +2,7 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<link rel="stylesheet" type="text/css" href="mystyle.css" />
+		<link rel="stylesheet" type="text/css" href="/css/mystyle.css" />
 	</head>
 	<body>
 		<?php include 'menu.php'?>
