@@ -1,11 +1,17 @@
-var pass=false, email=false, firstName=false, lastName=false; 
+var pass=false, email=false, firstName=false, lastName=false;
+var strInvalid="Field contains invalid characters or white spaces"; 
 
 function checkFirstName(first){
 	if (first.length<1){
 		document.getElementById("checkFirst").innerHTML="First Name field must not be empty.";
 		firstName=false;
 	}
+	else if(!checkSpecialCharactersPass(first)){
+		document.getElementById("checkFirst").innerHTML=strInvalid;
+		firstName=false;
+	}
 	else{
+		document.getElementById("checkFirst").innerHTML="";
 		firstName=true;
 	}
 }
@@ -16,7 +22,12 @@ function checkLastName(last){
 		document.getElementById("checkLast").innerHTML="Last Name field must not be empty.";
 		lastName=false;
 	}
+	else if(!checkSpecialCharactersPass(last)){
+		document.getElementById("checkLast").innerHTML=strInvalid;
+		firstName=false;
+	}
 	else{
+		document.getElementById("checkLast").innerHTML="";
 		lastName=true;
 	}	
 }
@@ -53,11 +64,14 @@ function checkEmail(e){
 			document.getElementById("emailCheck").appendChild(node);
 			email=false;
 		}
+		if(!checkSpecialCharactersPass(e)){
+			var node=document.createTextNode(strInvalid);
+			document.getElementById("emailCheck").appendChild(node);
+			email=false;
+		}
 	}
 	else{
-		document.getElementById("emailCheck").innerHTML="null";
-	}
-	if (document.getElementById("emailCheck").innerHTML==""){
+		document.getElementById("emailCheck").innerHTML="";
 		email=true;
 	}
 
@@ -95,4 +109,15 @@ function clearElement(elem){
 			element.removeChild(element.firstChild);
 		}
 	}
+}
+
+function checkSpecialCharactersPass(str){
+	
+	var iChars ="!#$%^&*()+[]\\\';,./{}|\":<>? "; //allowing @
+	for (var i = 0; i < str.length; i++) {
+		if (iChars.indexOf(str.charAt(i)) != -1) {
+			return false;
+		}
+	}
+	return true;
 }

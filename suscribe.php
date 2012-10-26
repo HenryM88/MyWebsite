@@ -30,11 +30,11 @@ include 'header.php'; ?>
 			  if (xmlhttp.readyState==4 && xmlhttp.status==200)
 			    {
 			    document.getElementById("userCheck").innerHTML=xmlhttp.responseText;
-			    if (xmlhttp.responseText=="Username is valid."){
-			    	document.getElementById("userCheck").style.color="green";
+			    if (xmlhttp.responseText.indexOf("valid")!=-1){
+			    	document.getElementById("userCheck").style.color="#66CD00";
 			    	}
 			    else{
-				    document.getElementById("userCheck").style.color="red";
+				    document.getElementById("userCheck").style.color="#8B3A3A";
 			    	}
 			    }
 			  }
