@@ -86,9 +86,9 @@
 		
 		<?php include 'menu.php'?>
 			<div class="middle">
-			The purpose of this website is to help me develop and show my web design skills. I plan on incorporating many technologies
-			into this site including javascrit, ajax, etc. The content will be based on my favorite sport, basketball, as well as other
-			hobbies of mine. 
+			The purpose of this website is to help me develop and show my web design skills. I plan on incorporating 
+			many technologies into this site including javascrit, ajax client and server validation, php, etc. The 
+			content will be based on my	favorite sport, basketball, as well as other hobbies of mine. 
 			<br />
 			<br />
 			<h3>Done/To Do List:</h3>
@@ -113,13 +113,14 @@
 			<li>&#8730 adjusting changes to code and paths after moving to webhost, changed background image</li>
 			<li>&#8730 installed adobe flash professional cs6, went through some tutorials, and made a cheesy chalk 
 			powder toss .swf to fit with the background, then uploaded it to site</li>
+			<li>&#8730 created 'my favorite shows' section in hobbies. Made a slideshow of my favorite shows, made
+			a navigator for it, and it pauses on hover.</li>
 			<br />
 			<li>log out function</li>
 			<li>lost password function</li>
 			<li>forums page, allow members to post</li>
 			<li>players page, drag players, find their info (height, age, some basic statistics)
 			teams</li>
-			<li>project page (jason's task, recreate league of legends promo page)</li>
 			<li>about me page</li>
 			<li>buttons to change site theme (css)</li>
 			<li>audio, flash, animation</li>
