@@ -1,6 +1,7 @@
 <?php 
 session_start();
 $_SESSION['user']=$_POST['username'];
+$_SESSION['firstName']=$_POST['firstName'];
 include 'databaseconnect.php';
 $encryptedPassword=md5($_POST['password']);
 mysql_query("INSERT INTO members (Username, FirstName, LastName, Password, Email, Sex) VALUES (
@@ -11,7 +12,7 @@ mysql_query("INSERT INTO members (Username, FirstName, LastName, Password, Email
 '$_POST[sex]',
 '$_POST[email]')");
 
-
+mysql_close($con);
 ?>
 <!DOCTYPE HTML>
 <html>

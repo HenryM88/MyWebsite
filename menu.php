@@ -12,6 +12,15 @@
 				<li><a href="/suscribe.php">SUSCRIBE</a></li>
 				<li><a href="/hobbies.php">OTHER HOBBIES</a></li>
 				<li id="menuLast"><a href="login.php">Login</a></li>
-			</ul>
+			</ul>			
 		</nav>
+<div id="subMenuBar">
+<span id="welcome"><?php
+  if (isset($_SESSION["firstName"])) {
+         echo "Welcome " . $_SESSION["firstName"] . "<a href='logout.php'><b>Logout</b> </a>";
+    }
+
+?>
+
+</span></div>
 		

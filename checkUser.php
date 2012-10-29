@@ -20,5 +20,5 @@ for ($i = 0; $i < $q.length; $i++) {
 else{
 	echo "Username is valid.";
 }
-
+mysql_close($con);
 ?>

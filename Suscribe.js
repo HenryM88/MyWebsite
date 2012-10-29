@@ -113,7 +113,7 @@ function clearElement(elem){
 
 function checkSpecialCharactersPass(str){
 	
-	var iChars ="!#$%^&*()+[]\\\';,./{}|\":<>? "; //allowing @
+	var iChars ="!#$%^&*()+[]\\\';,/{}|\":<>? "; //allowing @ and .
 	for (var i = 0; i < str.length; i++) {
 		if (iChars.indexOf(str.charAt(i)) != -1) {
 			return false;

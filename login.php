@@ -1,9 +1,10 @@
 <?php
+include 'header.php';
 function authenticationPassed(){
 	if (isset($_POST['username'])||isset($_POST['password'])){
 		include 'databaseconnect.php';
-		$sql="SELECT Password FROM Members WHERE Username= '".$_POST["username"]."'";
-		$result=mysql_query($sql);
+		$sql="SELECT Password, FirstName FROM members WHERE Username= '".$_POST["username"]."'";
+		$result=mysql_query($sql) or die(mysql_error());
 		$row=mysql_fetch_array($result);
 		
 		if (!$row){
@@ -15,10 +16,13 @@ function authenticationPassed(){
 			$encryptedPassword=md5($_POST['password']);
 			if ($encryptedPassword==$row['Password']){
 				header("Location: index.php");
+				session_start();
+				$_SESSION['firstName']=$row['FirstName'];
 			}else{
 				echo "Invalid username/password combination. Try again.";
 			}
 		}
+		mysql_close($con);
 	}
 	else{
 		echo "test";
@@ -29,7 +33,6 @@ function authenticationPassed(){
 <html>
 	<head>
 		<link rel="stylesheet" type="text/css" href="/css/mystyle.css" />
-		
 	</head>
 	<body>
 		<?php include 'menu.php'?>

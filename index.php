@@ -7,6 +7,7 @@
 		<script src="jquery.js"></script>
 		<script>
 		
+		
 		function fadeInFadeOut(ft){
 			ft.eq(0).fadeIn(1000,function(){
 				ft.eq(0).fadeOut(2000,function(){
@@ -35,9 +36,8 @@
 			});
 		});
 		*/
-				
-		</script>
 
+		</script>
 
 		
 	</head>
@@ -86,6 +86,8 @@
 		
 		<?php include 'menu.php'?>
 			<div class="middle">
+			<div class="test">
+			</div>
 			The purpose of this website is to help me develop and show my web design skills. I plan on incorporating 
 			many technologies into this site including javascrit, ajax client and server validation, php, etc. The 
 			content will be based on my	favorite sport, basketball, as well as other hobbies of mine. 
