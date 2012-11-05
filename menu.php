@@ -11,7 +11,7 @@
 				<li><a href="/players.php">PLAYERS</a></li>
 				<li><a href="/suscribe.php">SUSCRIBE</a></li>
 				<li><a href="/hobbies.php">OTHER HOBBIES</a></li>
-				<li id="menuLast"><a href="forum.php">FORUM</a></li>
+				<li id="menuLast"><a href="/forum.php">FORUM</a></li>
 			</ul>			
 		</nav>
 <div id="forumMenu"><?php
