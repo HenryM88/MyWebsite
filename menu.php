@@ -6,7 +6,7 @@
 					<ul>
 						<li><a href="/teams/lakers.php">Los Angeles Lakers</a></li>
 						<li><a href="/teams/knicks.php">New York Knicks</a></li>
-						<li><a href="/teams/nets.php">New Jersey Nets</a></li>
+						<li><a href="/teams/nets.php">Brooklyn Nets</a></li>
 					</ul></li>
 				<li><a href="/players.php">PLAYERS</a></li>
 				<li><a href="/suscribe.php">SUSCRIBE</a></li>

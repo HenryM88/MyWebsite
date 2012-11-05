@@ -54,6 +54,7 @@ include 'header.php';
 							echo '<td>'. $row['thread_date'] . '</td>';
 							echo '</tr>';
 						} 
+						echo '</table>';
 					}
 				}
 			}

@@ -40,7 +40,8 @@
 			</div>
 			The purpose of this website is to help me develop and show my web design skills. I plan on incorporating 
 			many technologies into this site including javascrit, ajax client and server validation, php, etc. The 
-			content will be based on my	favorite sport, basketball, as well as other hobbies of mine. 
+			content will be based on my	favorite sport, basketball, as well as other hobbies of mine. You can check
+			out my code at https://github.com/HenryM88
 			<br />
 			<br />
 			<h3>Done/To Do List:</h3>
