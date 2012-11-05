@@ -1,55 +1,5 @@
 <?php include 'databaseconnect.php';
 include 'header.php'; ?>
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<link rel="stylesheet" type="text/css" href="/css/mystyle.css" />
-		<script type="text/javascript" src="Suscribe.js"></script>
-		<script src="jquery.js"></script>
-		<script>
-		var username=false;
-		
-		function checkUsername(user)
-		{
-			if (user=="") //user.length<1
-			  {
-			  document.getElementById("userCheck").innerHTML="Username field must not be empty.";
-			  username=false;
-			  return;
-			  }
-			if (window.XMLHttpRequest)
-			  {// code for IE7+, Firefox, Chrome, Opera, Safari
-			  xmlhttp=new XMLHttpRequest();
-			  }
-			else
-			  {// code for IE6, IE5
-			  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-			  }
-			xmlhttp.onreadystatechange=function()
-			  {
-			  if (xmlhttp.readyState==4 && xmlhttp.status==200)
-			    {
-			    document.getElementById("userCheck").innerHTML=xmlhttp.responseText;
-			    if (xmlhttp.responseText.indexOf("valid")!=-1){
-			    	document.getElementById("userCheck").style.color="#66CD00";
-			    	}
-			    else{
-				    document.getElementById("userCheck").style.color="#8B3A3A";
-			    	}
-			    }
-			  }
-			xmlhttp.open("GET","checkUser.php?q="+user,true);
-			xmlhttp.send();
-			if(document.getElementById("userCheck").innerHTML==""){
-				username=true;
-			}
-		}
-
-		</script>
-	</head>
-	<body>
-		<?php include 'menu.php'?>
-			<div class="middle">
 			You can suscribe to this website to obtain future updates from me. Just provide the listed info below.
 			When submit is pressed, Ajax will be used to validate the fields. <br />
 			<b>Tests:</b> <br />
@@ -80,8 +30,4 @@ include 'header.php'; ?>
 				<p id="test"></p>
 			</form>
 			
-			</div>
-			<div class="right">
-			</div>
-	</body>
-</html>
+<?php include 'footer.php'; ?>

@@ -18,10 +18,12 @@ mysql_close($con);
 <html>
 	<head>
 		<link rel="stylesheet" type="text/css" href="/css/mystyle.css" />
+		<title>My Website</title>
+		<meta charset="UTF-8">
 	</head>
 	<body>
 		<?php include 'menu.php'?>
-			<span class="middle">
+			<div class="middle">
 			<h1><?php echo "Congratulations, you are now a member ". $_POST["username"]?></h1>
 			<h3>Login function and forums coming soon.</h2>
 			<?php echo "First Name: " .$_POST["firstName"] . "<br />";
@@ -31,8 +33,4 @@ mysql_close($con);
 			echo "Sex: " .$_POST["sex"] . "<br />";
 			echo "Email: " .$_POST["email"] . "<br />";
 			?>
-			</span>
-			<div class="right">
-			</div>
-	</body>
-</html>
+<?php include 'footer.php'; ?>

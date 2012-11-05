@@ -1,15 +1,19 @@
 <?php 
 session_start();
-if(isset($_SESSION['user'])){
-	if(isset($_SESSION['views'])){
-		$_SESSION['views']=$_SESSION['views']+1;
-	}else{
-		$_SESSION['views']=1;
-		}
-	echo "Views=". $_SESSION['views'];
-	//unhide logoff function in menu
-	//end session
-	//css for logoff
-	
-}
 ?>
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="/css/mystyle.css" />
+		<title>My Website</title>
+		<meta charset="UTF-8">
+		<script type = "text/javascript" src="/javascript/jquery.js"></script>
+		<script type = "text/javascript" src="/javascript/home.js"></script>
+		<script type = "text/javascript" src="/javascript/hobbies.js"></script>
+		<script type = "text/javascript" src="/javascript/suscribe.js"></script>
+		<script type = "text/javascript" src="/javascript/players.js"></script>
+	</head>
+	<body>
+		
+		<?php include 'menu.php' ?>
+			<div class="middle">

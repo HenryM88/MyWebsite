@@ -121,3 +121,42 @@ function checkSpecialCharactersPass(str){
 	}
 	return true;
 }
+
+// ajax server validation check username
+var username=false;
+		
+function checkUsername(user)
+{
+	if (user=="") //user.length<1
+	  {
+	  document.getElementById("userCheck").innerHTML="Username field must not be empty.";
+	  username=false;
+	  return;
+	  }
+	if (window.XMLHttpRequest)
+	  {// code for IE7+, Firefox, Chrome, Opera, Safari
+	  xmlhttp=new XMLHttpRequest();
+	  }
+	else
+	  {// code for IE6, IE5
+	  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	  }
+	xmlhttp.onreadystatechange=function()
+	  {
+	  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+	    {
+	    document.getElementById("userCheck").innerHTML=xmlhttp.responseText;
+	    if (xmlhttp.responseText.indexOf("valid")!=-1){
+	    	document.getElementById("userCheck").style.color="#66CD00";
+	    	}
+	    else{
+		    document.getElementById("userCheck").style.color="#8B3A3A";
+	    	}
+	    }
+	  }
+	xmlhttp.open("GET","checkUser.php?q="+user,true);
+	xmlhttp.send();
+	if(document.getElementById("userCheck").innerHTML==""){
+		username=true;
+	}
+}

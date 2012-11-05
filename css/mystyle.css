@@ -5,6 +5,7 @@ background-repeat:no-repeat;
 color: #EEE9E9;
 width:100%;
 background-color: black;
+text-align:middle;
 }
 
 
@@ -13,6 +14,11 @@ a:link {color:white;}
 a:visited {color:white;}
 a:hover {background-color:#555;color:white;}
 
+.forumButtons:hover, .loginButton:hover{background-color:#8B3A3A;}
+table a:link{color:black;}
+table a:visited {color:black;}
+table a:hover {background-color:#8B7355; color:white;}
+
 .menu{
 position:absolute;
 top:100px;
@@ -20,7 +26,8 @@ background-color:#000;
 color:white;
 padding:10px;
 margin-left:200px;
-width:700px;
+width:800px;
+z-index:1;
 }
 .menu li:hover ul {display:block;}
 
@@ -49,7 +56,7 @@ display: block;border-top:1px solid white;padding:10px; position:relative;width:
 position:absolute;
 top:180px;
 background-color: rgba(128,128,128,.7);
-width:700px;
+width:800px;
 z-index:-1;
 margin-left:200px;
 }
@@ -64,31 +71,70 @@ width:200px;
 color:#8B3A3A;
 }
 
+.fadeText{display:none; color:#8B3A3A; font-size:40px; position:absolute; margin-left:120px; top:-180px; z-index:2;}
 
-.fadeText{display:none; color:#8B3A3A; font-size:40px; position:absolute; left:300px; top:0px;}
-
-div { }
-.first { display:none; background-color: #3f3; left: 0;}
+.first { display:none; background-color: #3f3;}
 .second { display:none; background-color: #33f;}
 #flashContent { 
 position:absolute;
-left:280px;
+margin-left:80px;
+top:-180px;
 width:100%;
-height:100%; }
+height:100%;
+}
 
 .rotate{ display:none; height:300px; opacity:1.0;}
 
 .rotateText{display:none;}
 
-#subMenuBar{
+
+#forumMenu{
+width:400px;
+text-align:left;
 position:absolute;
 top:160px;
 margin-left:200px;
 height:20px;
-width:700px;
 background-color: gray;
+}
+.forumButtons{
+padding:0px 5px;
+}
+.forumTableHeader{
+background-color: #8B3A3A;
+}
+.postInfo{
+background-color: #8B3A3A;
+width:150px;
+}
+.tableRows{
+background-color: #FAF0E6;
+color: black;
+}
+.postRow{
+height: 200px;
+}
+.postedContent{
+background-color: #FAF0E6;
+color: black;
+width:600px;
+}
+.postSubmitContent{
+height:300px;
+width:500px;
+}
+.forumTable{
+width:800px;
+}
+#loginLogoutMenu{
+width:400px;
 text-align:right;
+position:absolute;
+top:160px;
+margin-left:600px;
+height:20px;
+background-color: gray;
 }
-#welcome{
 
-}
+
+#div1 {width:350px;height:300px;padding:10px;border:1px solid #aaaaaa;}
