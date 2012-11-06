@@ -64,7 +64,6 @@
 			Update: Found out that the nba site does not have some id integrated into the url when searching for player info so I can use it instead of espn for the functionality I orignally
 			intended, though I prefer using espn more. Anyway if I use nba.com instead, I would be able to create a text field here, allowing the user to type a name of a player, in which
 			then this page would scrap the html from the nba site and display it here. I would come back to this after working on the forum. <br />
-			Update: Had it working but forgot to save a few days ago and then I uploaded a old version to the server.
 			</p>
 			</br>
 			<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>

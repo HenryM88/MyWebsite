@@ -19,9 +19,11 @@ include 'header.php';
 				//form has been posted so save
 				$sql = "INSERT INTO topics(
 						topic_name, 
-						topic_description)
+						topic_description,
+						topic_date)
 				VALUES ('".mysql_real_escape_string($_POST[topic_name]) ."','" 
-						.mysql_real_escape_string($_POST[topic_description]) . "');";
+						.mysql_real_escape_string($_POST[topic_description]) . "',
+						NOW());";
 				$result = mysql_query($sql) or die(mysql_error());
 
 				

@@ -25,16 +25,21 @@ include 'header.php';
 						echo '<h2>Threads in \'' . $row['topic_name'] . '\' topic</h2>';
 					}
 					//query for threads
-					$sql= "SELECT
+					$sql= "SELECT *
+					FROM (SELECT
 							thread_id,
 							thread_subject,
 							thread_date,
 							thread_topic,
-							thread_author
+							thread_author,
+							post_date as thread_last_updated
 							FROM
-								threads
+								threads, posts
 							WHERE
-								thread_topic = ". mysql_real_escape_string($_GET['id']);
+								thread_topic = " . mysql_real_escape_string($_GET['id']) . 
+							" AND post_thread=thread_id
+							ORDER BY post_date DESC) AS x
+							GROUP BY thread_id;";
 					$result = mysql_query($sql);
 					if(!$result){
 						"There are no threads in this topic yet.";
@@ -43,15 +48,15 @@ include 'header.php';
 						//make a table to list the threads
 						echo '<table border="1" class="forumTable">
 						<tr class="forumTableHeader">
-						<th>Thread</th>
-						<th>Thread Author</th>
-						<th>Thread Started</th>
+						<th class="leftForumColumn">Thread</th>
+						<th>Thread Info</th>
 						</tr>';
 						while($row=mysql_fetch_assoc($result)){
 							echo '<tr class="tableRows">';
 							echo '<td><h3><a href="thread.php?id=' .$row['thread_id'] . '">' .  $row['thread_subject'] . '</a></h3></td>';
-							echo '<td>'. $row['thread_author'] . '</td>';
-							echo '<td>'. $row['thread_date'] . '</td>';
+							echo '<td>Thread Creator: '. $row['thread_author'] . '<br />
+							Thread Started: ' . $row['thread_date'] . '<br />
+							Thread Last Updated: ' . $row['thread_last_updated'] . '</td>';
 							echo '</tr>';
 						} 
 						echo '</table>';

@@ -5,7 +5,8 @@
 				$sql = "SELECT
 							topic_id,
 							topic_name,
-							topic_description
+							topic_description,
+							topic_date
 						FROM
 							topics";
 				$result = mysql_query($sql) or die(mysql_error());
@@ -20,15 +21,15 @@
 					}
 					else{
 						echo '<table border="1" class="forumTable">
-							<tr>
-								<th class="forumTableHeader">Topic</th>
-								<th class="forumTableHeader">Last updated</th>
+							<tr class="forumTableHeader">
+								<th class="leftForumColumn">Topic</th>
+								<th>Date Created</th>
 							</tr>';
 						while ($row=mysql_fetch_assoc($result))
 						{
 							echo '<tr class="tableRows">
-								<td><h3><a href="topic.php?id='.$row['topic_id'].'">' .  $row['topic_name'] . '</a></h3>' . $row['topic_description'] .
-								'<td>function in progress</td>
+								 <td><h3><a href="topic.php?id='.$row['topic_id'].'">' .  $row['topic_name'] . '</a></h3>' . $row['topic_description'] . '</td>';
+							echo '<td>' . $row['topic_date'] . '</td>
 								</tr>';
 						}
 						echo '</table>';
