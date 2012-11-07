@@ -41,7 +41,9 @@
 			The purpose of this website is to help me develop and show my web design skills. I plan on incorporating 
 			many technologies into this site including javascrit, ajax client and server validation, php, etc. The 
 			content will be based on my	favorite sport, basketball, as well as other hobbies of mine. You can check
-			out my code at https://github.com/HenryM88
+			out my code at https://github.com/HenryM88 <br /><br />
+			I focused primarily on functionality than appearance so far. Also, it's not meant to be a professional site
+			but a project to help me learn so please don't judge on the lebron background.
 			<br />
 			<br />
 			<h3>Done/To Do List:</h3>
@@ -71,7 +73,8 @@
 			<br />
 			<li>&#8730; did some html scraping in the players page. Took player information from espn.go.com and displayed it here. This was 
 				done interactively through the drag and drop technique by the user. </li>
-			<li>basic forum in progress:70-80% done</li>
+			<li>&#8730; basic forum functionality is done, working on tweaks here and there, and now starting to look for internships/employment</li>
+			<li>Currently downloaded and learning wordpress</li>
 			<li>lost password function</li>
 			<li>about me page</li>
 			<li>buttons to change site theme (css)</li>

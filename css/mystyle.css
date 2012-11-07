@@ -19,6 +19,11 @@ table a:link{color:black;}
 table a:visited {color:black;}
 table a:hover {background-color:#8B7355; color:white;}
 
+#regLink{
+color:black;
+text-decoration: underline;
+}
+
 .menu{
 position:absolute;
 top:100px;
@@ -138,6 +143,5 @@ margin-left:600px;
 height:20px;
 background-color: gray;
 }
-
 
 #div1 {width:350px;height:300px;padding:10px;border:1px solid #aaaaaa;}

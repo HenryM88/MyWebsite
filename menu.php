@@ -22,7 +22,7 @@
 	}
 	if ($_SERVER['PHP_SELF']=='/topic.php'){
 		if (isset($_SESSION['user'])){
-			echo '<a class="forumButtons" href="/create_thread.php">CREATE NEW THREAD</a>';
+			echo '<a class="forumButtons" href="/create_thread.php?id=' .mysql_real_escape_string($_GET['id']) . '">CREATE NEW THREAD</a>';
 		}
 		else{
 			echo 'You must be logged in order to create a thread';

@@ -1,5 +1,4 @@
 <?php> include 'header.php'; ?>
-				This page is still in progress
 				<?php
 				include 'databaseconnect.php';
 				$sql = "SELECT
